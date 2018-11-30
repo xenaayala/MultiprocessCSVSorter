@@ -1,0 +1,11 @@
+scannerCSVsorter : scannerCSVsorter.o mergesort.o
+    gcc -o scannerCSVsorter scannerCSVsorter.o mergesort.o
+
+scannerCSVsorter.o : scannerCSVsorter.h
+    gcc -c scannerCSVsorter.c
+mergesort.o : scannerCSVsorter.h
+    gcc -c mergesort.c
+
+.PHONY : clean
+clean :
+    -rm scannerCSVsorter scannerCSVsorter.o mergesort.o
